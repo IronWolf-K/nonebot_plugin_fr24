@@ -1,0 +1,1 @@
+# nonebot2 fr24插件
