@@ -1,1 +1,4 @@
 __pycache__/
+setup.py
+nonebot_plugin_fr24.egg-info/
+dist/

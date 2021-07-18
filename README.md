@@ -9,19 +9,24 @@ QQ机器人FrightRadar24 航班查询插件v0.2，基于cqhttp+nonebot2开发
 
 ## 安装
 
-该项目需要`brotlipy`用于解码响应内容：
-
+pip安装：
 ```shell
-pip install brotlipy
+pip install nonebot-plugin-fr24
 ```
 
-目前暂时仅支持git clone至本地：
+你也可以git clone至本地：
 
 ```shell
 git clone https://github.com/IronWolf-K/nonebot_plugin_fr24.git
 ```
 
-将插件移动至`plugin`下即可使用
+在bot.py中添加：
+
+```shell
+nonebot.load_plugin('nonebot_plugin_fr24')
+```
+
+或将插件移动至`plugin`下即可使用
 
 ## 功能与使用方法
 
