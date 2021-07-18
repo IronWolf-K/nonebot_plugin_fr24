@@ -19,6 +19,7 @@ class FR24Request(object):
             raise e
         except HTTPStatusError as e:
             raise e
+        print(resp.url)
         return  resp
          
     async def get_content(self):

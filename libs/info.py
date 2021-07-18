@@ -37,3 +37,5 @@ class Info(object):
     "maxage": "14400",
     "gliders": "1",
     "stats": "1"}
+
+    message_tip = "（基于端口返回航班数据条数统计，仅供参考）"

@@ -17,7 +17,8 @@ class Config(BaseSettings):
     CMDF_TYPE: set   = { 'type', '机型' }
     CMDF_FROM: set   = { 'from', '出发' }
     CMDF_TO: set     = { 'to', '到达' }
-    CMDF_AIRLINE: set ={'air', '公司'}
+    CMDF_AIRPORT: set     = { 'airport', '机场' }
+    CMDF_AIRLINE: set ={'airline', '公司'}
     CMDF_FLIGHT : set ={'flight', '航班'}
     TIMEOUT = 5
 
