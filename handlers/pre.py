@@ -13,5 +13,5 @@ async def pre_handler(bot: Bot, event: MessageEvent, state: T_State) -> Any:
         state['cmd'] = cmd
         print(state)
     except IndexError:
-        await fr24.finish('空命令')
+        await fr24.finish('命令为空，获取帮助请输入：/fr24 help')
         return
