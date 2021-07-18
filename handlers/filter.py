@@ -22,26 +22,29 @@ async def filter_handler(bot: Bot, state: T_State):
             await fr24.finish('请在命令后输入出发机场IATA（例：PVG）')
             return
         request_params["from"] = param
-    if cmd in config.CMDF_TO:
+    elif cmd in config.CMDF_TO:
         if param is None:
             await fr24.finish('请在命令后输入到达机场IATA（例：PVG）')
             return
         request_params["to"] = param
-    if cmd in config.CMDF_AIRPORT:
+    elif cmd in config.CMDF_AIRPORT:
         if param is None:
             await fr24.finish('请在命令后输入机场IATA（例：PVG）')
             return
         request_params["airport"] = param
-    if cmd in config.CMDF_TYPE:
+    elif cmd in config.CMDF_TYPE:
         if param is None:
             await fr24.finish('请在命令后输入机型缩写（例：B738）')
             return
         request_params["type"] = param
-    if cmd in config.CMDF_AIRLINE:
+    elif cmd in config.CMDF_AIRLINE:
         if param is None:
             await fr24.finish('请在命令后输入航司IATA（例：CA）')
             return
         request_params["flight"] = param
+    else:
+        await fr24.finish('无该命令，请参考 /fr24 help输入')
+        return
     request = FR24Request(Info.real_time_flight_tracker_data_url, request_params, Info.headers.copy())
     try:
         response = await request.get_content()
