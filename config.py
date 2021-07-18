@@ -19,5 +19,6 @@ class Config(BaseSettings):
     CMDF_TO: set     = { 'to', '到达' }
     CMDF_AIRLINE: set ={'air', '公司'}
     CMDF_FLIGHT : set ={'flight', '航班'}
+    TIMEOUT = 5
 
 config = Config()

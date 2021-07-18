@@ -1,5 +1,6 @@
 import json
-import httpx
+from httpx import AsyncClient,TimeoutException,HTTPStatusError
+from ..config import config
 class FR24Request(object):
 
 
@@ -10,8 +11,14 @@ class FR24Request(object):
         self.headers = headers
 
     async def __send_request(self, url, params, headers):
-        async with httpx.AsyncClient() as client:
-            resp = await client.get(url,headers=headers,params=params)
+        timeout = params.get('timeout',config.TIMEOUT)
+        try:
+            async with AsyncClient(timeout=timeout) as client:
+                resp = await client.get(url,headers=headers,params=params)
+        except TimeoutException as e:
+            raise e
+        except HTTPStatusError as e:
+            raise e
         return  resp
          
     async def get_content(self):
